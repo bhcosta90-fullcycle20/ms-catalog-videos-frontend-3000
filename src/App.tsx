@@ -1,16 +1,16 @@
 import { Box } from '@material-ui/core';
-import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar'
-import Page from './components/Page'
+import AppRouter from './routes/AppRouter'
 
 function App() {
   return (<>
-    <Navbar></Navbar>
-    <Box paddingTop={'79px'}>
-      <Page title={'teste'}>
-        Conteúdo
-      </Page>
-    </Box>
+    <BrowserRouter>
+      <Navbar></Navbar>
+      <Box paddingTop={'79px'}>
+        <AppRouter></AppRouter>
+      </Box>
+    </BrowserRouter>
   </>);
 }
 

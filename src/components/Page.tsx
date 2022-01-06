@@ -16,7 +16,7 @@ const Index: FunctionComponent<IndexProps> = (props) => {
 
     return ( <div>
         <Container>
-            <Typography component={'h1'} className={classes.title} variant="h5">{props.title}123</Typography>
+            <Typography component={'h1'} className={classes.title} variant="h5">{props.title}</Typography>
             {props.children}
         </Container>
     </div> );
