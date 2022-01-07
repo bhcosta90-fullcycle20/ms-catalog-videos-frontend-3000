@@ -10,11 +10,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import MuiBreadcrumbs from '@material-ui/lab/Breadcrumbs';
-import { Theme } from '@material-ui/core'
-import MemoryRouter from 'react-router/MemoryRouter';
-import Route from 'react-router/Route';
-import { Link as RouterLink } from 'react-router-dom';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import { Theme } from '@material-ui/core/core';
+import { Link as RouterLink, MemoryRouter, Route } from 'react-router-dom';
 
 const breadcrumbNameMap = {
     '/inbox': 'Inbox',
@@ -58,7 +56,7 @@ const styles = (theme: Theme) => ({
     },
 });
 
-class Breadcrumbs extends React.Component {
+class RouterBreadcrumbs extends React.Component {
     state = {
         open: true,
     };
@@ -80,7 +78,7 @@ class Breadcrumbs extends React.Component {
                                 const pathnames = location.pathname.split('/').filter(x => x);
 
                                 return (
-                                    <MuiBreadcrumbs arial-label="Breadcrumb">
+                                    <Breadcrumbs arial-label="Breadcrumb">
                                         <Link component={RouterLink} color="inherit" to="/">
                                             Home
                                         </Link>
@@ -98,7 +96,7 @@ class Breadcrumbs extends React.Component {
                                                 </Link>
                                             );
                                         })}
-                                    </MuiBreadcrumbs>
+                                    </Breadcrumbs>
                                 );
                             }}
                         </Route>
@@ -121,8 +119,8 @@ class Breadcrumbs extends React.Component {
     }
 }
 
-Breadcrumbs.propTypes = {
+RouterBreadcrumbs.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Breadcrumbs);
+export default withStyles(styles)(RouterBreadcrumbs);
